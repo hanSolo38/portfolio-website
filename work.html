@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Site</title>
+    <link rel="shortcut icon" href="./img/favicon.svg">
+    <!--link for the font from google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <!--this is a normalizer to reset CSS. Put before actual CSS style sheet-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <link rel="codePage" href="codeExamples.html">
+    <link rel="about" href="about.html">
+    <link rel="contact" href="contact.html">
+    <link rel="work" href="work.html">
+  
+
+</head>
+
+<body>
+    <header class="page-header">
+        <img src="img/jonathan_logo.JPG" alt="Jonathan Han Logo" class="page-header__item page-logo">
+        <!--nav used to indicate to reader. role also helps as it's read first after the UL role-->
+        <nav class="main-nav page-header__item">
+            <ul role="menubar" class="nav-list">
+                <li role="presentation">
+                    <!--why do we need two underscores for these class names?-->
+                    <a role="menuitem" class="nav-list__item" href="index.html">Home</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" class="nav-list__item" href="about.html">About Me</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" class="nav-list__item nav-list__item--active" href="work.html">My Work</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" class="nav-list__item" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Work</h1>
+            <div class="work-list">
+                <div class="work-list__item">
+                    <h2>eCommerce Site</h2>
+                    <p>
+                        I was responsible for building the framework on the frontend and managing API for cart checkout. Written in HTML and CSS.
+                    </p>
+                    <a href="#">See project on GitHub</a>
+                </div>
+                <div class="work-list__item">
+                    <h2>Mobile Web App</h2>
+                    <p>
+                        Managed frontend. Written in React.js.
+                    </p>
+                    <a href="#">See project on GitHub</a>
+                </div>
+                <div class="work-list__item">
+                    <h2>Mobile Game</h2>
+                    <p>
+                        Created a basic mobile game similar to Angry Birds.
+                    </p>
+                    <a href="#">See project on GitHub</a>
+                </div>
+                <div class="work-list__item">
+                    <h2>Profile Page</h2>
+                    <p>
+                        Created from the ground up through HTML and CSS.
+                    </p>
+                    <a href="#">See project on GitHub</a>
+                </div>
+                <div class="work-list__item">
+                    <h2>Code Example 5</h2>
+                    <p>
+                        I was responsible for building the framework on the frontend and managing API for cart checkout. Written in HTML and CSS.
+                    </p>
+                    <a href="#">See project on GitHub</a>
+                </div>
+                <div class="work-list__item">
+                    <h2>Code Example 6</h2>
+                    <p>
+                        I was responsible for building the framework on the frontend and managing API for cart checkout. Written in HTML and CSS.
+                    </p>
+                    <a href="#">See project on GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer">
+        <br>
+        <p>Find me on</p>
+        <div>
+            <a href="https://www.linkedin.com/in/jonathan-han-cs-8239001a/" target="_blank"><img class="socialMediaIcon" src="./img/linkedInLogo.svg" alt="LinkedIn"> </a>
+            <a href="https://github.com/" target="_blank"><img class="socialMediaIcon" src="./img/github.svg" alt="Github"> </a>
+            <a href="https://x.com/?lang=en" target="_blank"><img class="socialMediaIcon" src="./img/twitterLogo.svg" alt="Twitter"> </a>
+        </div>
+        <a href="https://www.freepik.com">Background image designed by vectorpocket - Freepik.com</a>
+    </footer>
+<script src="js/tota11y.min.js"></script>   
+</body>
+
+</html>

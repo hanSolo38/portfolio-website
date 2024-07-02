@@ -1,0 +1,572 @@
+/* use a key at the top of the css to get to your colors faster
+Colors used
+EX:
+Test Color (Dark Gray): #2b2b2b;
+Primary Color (Purple): #357b70;
+Secondary Color (Orange): #e0b354;
+
+Linter Notes: This linter is making me put a gap before each comment. Also it is making me replace all tabs with double spaces... is that needed?
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+/* added this to make vertical scrollbar always visible */
+
+html {
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
+    background-color: transparent;
+    background-image: url(/img/goldenGateBridgeTransparent.svg);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
+}
+
+body {
+    padding: 30px;
+
+    /* this is from google font. keep in mind some fonts have guidelines that come with the CSS */
+
+    /* font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal; */
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    /* added this to make all lowercase letters a caps. not part of font package */
+
+    /* font-variant: small-caps; */
+
+    /* this adds spacing under the lines of font */
+    line-height: 1.6;
+}
+
+header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* does it matter if this is here vs under other classes? */
+
+/* this is used to adjust links */
+a {
+    color: blue;
+}
+
+/* do not use underline for hover but example: wavy underline overline */
+a:hover {
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(109, 8, 60);
+}
+
+a:active {
+    color: rgb(54, 234, 13);
+}
+
+table {
+    border-spacing: 10px 1em;
+    text-align: left;
+}
+
+button {
+    /* overwrites browser defaults and resets the border */
+    border: none;
+    display: inline-block;
+
+    /* takes the font from the outer container */
+    font-family: inherit;
+
+    /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+    text-align: center;
+
+    /* made the color rbga vs rgb */
+    background-color: #357b70cd;
+    color: white;
+    text-decoration: none;
+
+    /* adds spacing to the button(size of button) */
+    padding: 10px;
+
+    /* makes the edges round or you can use % to make it elliptical */
+    border-radius: 30px;
+
+    /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+
+    /* use shorthand as below vs the long way:
+    transition-duration: 0.2s;
+    transition-property: opacity;
+    shorthand translation: transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay];
+    leaving timing function off goes to default of "ease" and leaving transition delay off goes to 0s */
+
+    transition: opacity 0.2s;
+}
+
+.button {
+    /* overwrites browser defaults and resets the border */
+    border: none;
+    display: inline-block;
+
+    /* takes the font from the outer container */
+    font-family: inherit;
+
+    /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+    text-align: center;
+
+    /* made the color rbga vs rgb */
+    background-color: #357b70cd;
+    color: white;
+    text-decoration: none;
+
+    /* adds spacing to the button(size of button) */
+    padding: 10px;
+
+    /* makes the edges round or you can use % to make it elliptical */
+    border-radius: 30px;
+
+    /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+
+    /* use shorthand as below vs the long way:
+    transition-duration: 0.2s;
+    transition-property: opacity;
+    shorthand translation: transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay];
+    leaving timing function off goes to default of "ease" and leaving transition delay off goes to 0s */
+
+    transition: opacity 0.2s;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+    /* makes the pointer a hand when on the button */
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.button_secondary {
+    border: none;
+    font-family: inherit;
+    background-color: #761919cd;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 30px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.page-header {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+}
+
+.page-header__item {
+    /* below is shorthand but you can also write out each individual:
+      flex: <flex-grow> <flex-shrink> <flex-basis> */
+    flex: 0 1 200px;
+}
+
+/* pseudo class last child to control only <nav> in this case */
+.page-header__item:last-child {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.page-logo {
+    width: 400px;
+    max-height: 100px;
+}
+
+.nav-list {
+    font-size: 20px;
+    font-weight: 400;
+    list-style-type: none;
+}
+
+.nav-list li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.nav-list__item--active {
+    text-decoration: none;
+    background-color: gold;
+    font-weight: 600;
+}
+
+.main-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    vertical-align: middle;
+    max-width: fit-content;
+    margin: 1em;
+}
+
+.profile__portait {
+    display: inline-flex;
+    justify-content: center;
+
+    /* 320px is max width for mobile */
+    width: 20%;
+    margin-right: 40px;
+    border-radius: 50%;
+}
+
+.profile__text {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.myContactInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: bottom;
+}
+
+/* used chatGPT for the skill bar CSS and HTML */
+
+.skill-bars {
+    /* added flex properties on my own */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+}
+
+.skill-bars .skill-bar {
+    margin-bottom: 10px;
+}
+
+.skill-bars .skill-bar .skill-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.skill-bars .skill-bar .skill-bar-inner {
+    height: 14px;
+    background-color: #b5b2b2;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.skill-bars .skill-bar .skill-bar-inner .skill-level {
+    height: 100%;
+    width: 0;
+    background-color: #2daf1c;
+    border-radius: 10px;
+    transition: width 1s ease;
+}
+
+/* Adjust skill levels */
+.skill-bars .skill-bar:nth-child(1) .skill-level {
+    width: 90%;
+}
+
+.skill-bars .skill-bar:nth-child(2) .skill-level {
+    width: 90%;
+}
+
+.skill-bars .skill-bar:nth-child(3) .skill-level {
+    width: 70%;
+}
+
+.skill-bars .skill-bar:nth-child(4) .skill-level {
+    width: 60%;
+}
+
+.skill-bars .skill-bar:nth-child(5) .skill-level {
+    width: 50%;
+}
+
+.skill-bars a {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* start grid fallback */
+.work-list__item {
+    display: inline-block;
+
+    /* this value is used to show 1/3 of the page similar to grid */
+    width: 33%;
+}
+
+/* end grid fallback */
+
+@supports (display: grid) {
+    .work-list {
+        display: grid;
+
+        /* can also use pixels vs fr but fr(fraction) is used here to take up all space on screen */
+        grid-template-columns: 1fr 1fr;
+
+        /* good practice to only limit one if the list can grow. By default row is set to auto if deleted.
+      Ex. of how to write: grid-template-rows: 300px 300px; */
+        grid-gap: 20px;
+    }
+
+    .work-list__item {
+        background-color: #b5b2b2;
+        width: auto;
+        min-height: auto;
+        margin: 0;
+        padding: 20px;
+    }
+
+    /* .work-list__item:last-child {
+      /* used shorthand but that =
+      grid-column-start: 3;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      grid-column: 2 / 2;
+      grid-row: 1 / 2;
+    }
+  */
+}
+
+.page-footer {
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.page-footer a {
+    text-decoration: none;
+}
+
+/* left color here vs variable as it's only added here from a prior example. I do not intend on keeping this inline styling */
+
+.midbody {
+    background-color: black;
+    color: gold;
+    font-size: 18px;
+}
+
+.inlineText {
+    display: inline-block;
+}
+
+.socialMediaIcon {
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+}
+
+.formFont {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+@media all and (max-width: 500px) {
+    .work-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+    .work-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media all and (max-width: 750px) {
+    .work-list {
+        grid-gap: 10px;
+    }
+
+    .work-list__item:last-child {
+        grid-column: auto/auto;
+        grid-row: auto/auto;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+.about-mainbody {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.about-svg {
+    width: auto;
+}
+
+.about-table {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    vertical-align: middle;
+    margin: 1em;
+}
+
+.sun-center {
+    animation: 4s color-change infinite alternate linear;
+}
+
+.boats {
+    animation: 20s boat-move infinite alternate linear;
+}
+
+.birds {
+    animation: 60s bird-move infinite alternate linear;
+}
+
+@keyframes boat-move {
+    from {
+        transform: translate(500px, 10px);
+    }
+
+    to {
+        transform: translate(-400px, 10px);
+    }
+}
+
+@keyframes bird-move {
+    from {
+        transform: translate(-400px, -100px);
+    }
+
+    to {
+        transform: translate(500px, 50px);
+    }
+}
+
+@keyframes color-change {
+    0% {
+        fill: #ecd11c;
+    }
+
+    50% {
+        fill: #f3970e;
+    }
+
+    100% {
+        fill: #f76414;
+    }
+}
+
+/* trying to identify specific sections of my flowchart svg image on about page. cannot isolate specific elements. */
+
+/* #g15182 {
+    animation: 4s color-change infinite alternate linear;
+  } */
+
+/* #svg2 {
+    display: inline-flex;
+    align-items: center;
+  } */
+
+/* instead of % you can use "start" and "end" if only 2 colors.
+     color-change is the name of the animation to use later seen with .sun */
+
+/* @keyframes color-change {
+    0% {
+      fill: #edc655;
+    }
+  
+    50% {
+      fill: #fcffad;
+    }
+  
+    100% {
+      fill: #f76414;
+    }
+  } */
+
+/* this is the long hand of below:
+  .sun {
+    animation-duration: 4s;
+    animation-name: color-change;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+  } */
+
+/* .sun {
+    animation: 4s color-change infinite alternate linear;
+  }
+  
+  @keyframes cloud-move {
+    from {
+      transform: translate(0, 50px);
+    }
+  
+    to {
+      transform: translate(200px, 50px);
+    }
+  }
+  
+  .cloud-front {
+    animation: 30s cloud-move infinite alternate linear;
+  }
+  
+  @keyframes cloud-move-reverse {
+    from {
+      transform: translate(446px, 48px);
+    }
+  
+    to {
+      transform: translate(100px, 48px);
+    }
+  }
+  
+  .cloud-back {
+    animation: 34s cloud-move-reverse infinite alternate linear;
+  } */
