@@ -215,7 +215,7 @@ button:focus,
   text-decoration: none;
   font: var(--mainFont);
   margin: 0 10px;
-  padding: 10px;
+  padding: 5px;
   position: relative;
   z-index: 0;
   cursor: pointer;
