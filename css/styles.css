@@ -22,7 +22,9 @@ Linter Notes: This linter is making me put a gap before each comment. Also it is
   --buttonColorSecondary: #761919cd;
   --buttonColorFontPrimary: white;
   --buttonBorderBottom: 2px solid rgba(0, 0, 0, 0.2);
-  --navActiveColor: gold;
+  --navActiveColor: rgba(105, 150, 235, 0.3);
+  --navBaseColor: blue;
+  --navFontColor: black;
   --skillsBarMainColor: #2daf1c;
   --skillsBarBackground: #b5b2b2;
   --animationSunColorPrimary: #ecd11c;
@@ -208,10 +210,48 @@ button:focus,
   margin-left: 15px;
 }
 
-.nav-list__item--active {
+.nav-list a {
+  color: var(--navFontColor);
   text-decoration: none;
-  background-color: var(--navActiveColor);
-  font-weight: var(--fontWeightBold);
+  font: var(--mainFont);
+  margin: 0 10px;
+  padding: 10px;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+}
+
+.nav-list a::before,
+.nav-list a::after {
+  position: absolute;
+  opacity: 0.5;
+  height: 100%;
+  width: 2px;
+  content: '';
+  background: var(--navBaseColor);
+  transition: all 0.3s;
+}
+
+.nav-list a::before {
+  left: 0;
+  top: 0;
+}
+
+.nav-list a::after {
+  right: 0;
+  bottom: 0;
+}
+
+.nav-list a:hover::before,
+.nav-list a:hover::after {
+  opacity: 1;
+  height: 2px;
+  width: 100%;
+}
+
+.nav-list__item--active {
+  background: var(--navActiveColor);
+  font-weight: var(--fontWeightBold) !important;
 }
 
 .main-info {
