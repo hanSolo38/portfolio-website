@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 2 version
-*/
-
 /* use a key at the top of the css to get to your colors faster
 Colors used
 EX:
@@ -16,11 +9,11 @@ Linter Notes: This linter is making me put a gap before each comment. Also it is
 */
 
 * {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 /* added this to make vertical scrollbar always visible */
+
 html {
     overflow: -moz-scrollbars-vertical;
     overflow-y: scroll;
@@ -54,11 +47,7 @@ body {
 
 header {
     padding: 10px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
@@ -140,8 +129,6 @@ button {
     shorthand translation: transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay];
     leaving timing function off goes to default of "ease" and leaving transition delay off goes to 0s */
 
-    -webkit-transition: opacity 0.2s;
-
     transition: opacity 0.2s;
 }
 
@@ -176,8 +163,6 @@ button {
     shorthand translation: transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay];
     leaving timing function off goes to default of "ease" and leaving transition delay off goes to 0s */
 
-    -webkit-transition: opacity 0.2s;
-
     transition: opacity 0.2s;
 }
 
@@ -202,8 +187,6 @@ button:focus,
 }
 
 .page-header {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: 100%;
     padding: 20px;
@@ -212,15 +195,11 @@ button:focus,
 .page-header__item {
     /* below is shorthand but you can also write out each individual:
       flex: <flex-grow> <flex-shrink> <flex-basis> */
-    -webkit-box-flex: 0;
-    -ms-flex: 0 1 200px;
     flex: 0 1 200px;
 }
 
 /* pseudo class last child to control only <nav> in this case */
 .page-header__item:last-child {
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
     flex-grow: 1;
     text-align: right;
 }
@@ -241,103 +220,31 @@ button:focus,
     margin-left: 15px;
 }
 
-.nav-list a {
-    color: black;
-    text-decoration: none;
-    font: "Kanit", sans-serif;
-    margin: 0 10px;
-    padding: 10px;
-    position: relative;
-    z-index: 0;
-    cursor: pointer;
-}
-
-.nav-list a::before {
-    position: absolute;
-    opacity: 0.5;
-    height: 100%;
-    width: 2px;
-    content: '';
-    background: blue;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-.nav-list a::after {
-    position: absolute;
-    opacity: 0.5;
-    height: 100%;
-    width: 2px;
-    content: '';
-    background: blue;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-.nav-list a::before {
-    left: 0;
-    top: 0;
-}
-
-.nav-list a::after {
-    right: 0;
-    bottom: 0;
-}
-
-.nav-list a:hover::before,
-.nav-list a:hover::after {
-    opacity: 1;
-    height: 2px;
-    width: 100%;
-}
-
 .nav-list__item--active {
-    background: rgba(105, 150, 235, 0.3);
-    font-weight: 600 !important;
+    text-decoration: none;
+    background-color: gold;
+    font-weight: 600;
 }
 
 .main-info {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
 }
 
 .profile {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: right;
-    -ms-flex-pack: right;
     justify-content: right;
     vertical-align: middle;
-    max-width: -webkit-fit-content;
-    max-width: -moz-fit-content;
     max-width: fit-content;
     margin: 1em;
 }
 
 .profile__portait {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
     display: inline-flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
 
     /* 320px is max width for mobile */
@@ -352,15 +259,8 @@ button:focus,
 }
 
 .myContactInfo {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: bottom;
-    -ms-flex-pack: bottom;
     justify-content: bottom;
 }
 
@@ -368,15 +268,8 @@ button:focus,
 
 .skill-bars {
     /* added flex properties on my own */
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     width: 80%;
 }
@@ -402,7 +295,6 @@ button:focus,
     width: 0;
     background-color: #2daf1c;
     border-radius: 10px;
-    -webkit-transition: width 1s ease;
     transition: width 1s ease;
 }
 
@@ -444,11 +336,9 @@ button:focus,
 
 @supports (display: grid) {
     .work-list {
-        display: -ms-grid;
         display: grid;
 
         /* can also use pixels vs fr but fr(fraction) is used here to take up all space on screen */
-        -ms-grid-columns: 1fr 20px 1fr;
         grid-template-columns: 1fr 1fr;
 
         /* good practice to only limit one if the list can grow. By default row is set to auto if deleted.
@@ -478,12 +368,7 @@ button:focus,
 
 .page-footer {
     clear: both;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
     text-align: center;
 }
@@ -496,7 +381,7 @@ button:focus,
 
 .midbody {
     background-color: black;
-    color: rgba(105, 150, 235, 0.3);
+    color: gold;
     font-size: 18px;
 }
 
@@ -511,12 +396,7 @@ button:focus,
 }
 
 .formFont {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
     width: 600px;
     font-size: 14px;
@@ -525,14 +405,12 @@ button:focus,
 
 @media all and (max-width: 500px) {
     .work-list {
-        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     }
 }
 
 @media all and (min-width: 500px) and (max-width: 750px) {
     .work-list {
-        -ms-grid-columns: 1fr 20px 1fr;
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -561,11 +439,7 @@ button:focus,
 }
 
 .about-mainbody {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     width: 100%;
 }
@@ -575,94 +449,42 @@ button:focus,
 }
 
 .about-table {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
     justify-content: flex-end;
     vertical-align: middle;
     margin: 1em;
 }
 
 .sun-center {
-    -webkit-animation: 4s color-change infinite alternate linear;
     animation: 4s color-change infinite alternate linear;
 }
 
 .boats {
-    -webkit-animation: 20s boat-move infinite alternate linear;
     animation: 20s boat-move infinite alternate linear;
 }
 
 .birds {
-    -webkit-animation: 60s bird-move infinite alternate linear;
     animation: 60s bird-move infinite alternate linear;
-}
-
-@-webkit-keyframes boat-move {
-    from {
-        -webkit-transform: translate(500px, 10px);
-        transform: translate(500px, 10px);
-    }
-
-    to {
-        -webkit-transform: translate(-400px, 10px);
-        transform: translate(-400px, 10px);
-    }
 }
 
 @keyframes boat-move {
     from {
-        -webkit-transform: translate(500px, 10px);
         transform: translate(500px, 10px);
     }
 
     to {
-        -webkit-transform: translate(-400px, 10px);
         transform: translate(-400px, 10px);
-    }
-}
-
-@-webkit-keyframes bird-move {
-    from {
-        -webkit-transform: translate(-400px, -100px);
-        transform: translate(-400px, -100px);
-    }
-
-    to {
-        -webkit-transform: translate(500px, 50px);
-        transform: translate(500px, 50px);
     }
 }
 
 @keyframes bird-move {
     from {
-        -webkit-transform: translate(-400px, -100px);
         transform: translate(-400px, -100px);
     }
 
     to {
-        -webkit-transform: translate(500px, 50px);
         transform: translate(500px, 50px);
-    }
-}
-
-@-webkit-keyframes color-change {
-    0% {
-        fill: #ecd11c;
-    }
-
-    50% {
-        fill: #f3970e;
-    }
-
-    100% {
-        fill: #f76414;
     }
 }
 
